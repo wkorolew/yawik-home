@@ -29,20 +29,32 @@
       <v-btn @click.stop="miniVariant = !miniVariant" icon>
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn @click.stop="clipped = !clipped" icon>
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn @click.stop="fixed = !fixed" icon>
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
+
+      <v-toolbar color="#fff" flat>
+        <v-toolbar-title>
+          <div class="yawik">
+            Yawik
+            <span>
+              Freies Bewerbermanagement und Jobportal
+            </span>
+          </div>
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items>
+          <v-btn text color="orange">Download</v-btn>
+          <v-btn text color="orange">FAQ</v-btn>
+          <v-btn text color="orange">Mitmachen</v-btn>
+          <v-btn text color="orange">Credits</v-btn>
+          <v-btn text color="orange">Support</v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+
       <v-btn @click.stop="rightDrawer = !rightDrawer" icon>
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
     <v-content>
-      <v-container>
+      <v-container fluid style="padding: 0px;">
         <nuxt />
       </v-container>
     </v-content>
@@ -91,8 +103,18 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'YAWIK'
     }
   }
 }
 </script>
+<style scoped>
+.yawik {
+  color: #faa427;
+  font-size: 35px;
+  font-family: Lato, sans-serif !important;
+}
+.yawik span {
+  font-size: 15px;
+}
+</style>
